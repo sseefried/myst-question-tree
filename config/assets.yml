@@ -1,5 +1,0 @@
-emed_assets: datauri
-
-stylesheets:
-  common:
-    - public/stylesheets/myst.css
