@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>MOUNTAINS YOUTH SERVICES TEAM</title>
+  <%= include_stylesheets :common %>
+</head>
+<body>
+
+  <div class="middle">
+    <div class="content" style="height: 500px;">
+      <!-- Logo -->
+      <div style="float: right;">
+        <p class="tiny-text">Blue Mountains, NSW, Australia</p>
+        <%= image_tag 'myst_rgb.jpg', :style=>"border: none; height: 56px; width: 82px; " %>
+      </div>
+
+      <!-- HEADER -->      
+      <div class="header">
+        <p style="padding-top: 0pt; " class="header-text">MOUNTAINS YOUTH<br /></p>
+        <p style="padding-bottom: 0pt; " class="header-text">SERVICES TEAM</p>
+      </div>
+
+      <%= yield %>
+    </div><!-- content -->
+    <div class="content tiny-text" style="border-top: 1px solid #CCC">
+        <a href="http://myst.com.au">Home</a> | <a href="">Contact us</a></div>
+  </div><!-- middle -->
+
+  <div class="bottom"></div>
+</body>
+</html>

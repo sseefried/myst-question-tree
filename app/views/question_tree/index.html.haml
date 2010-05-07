@@ -2,10 +2,12 @@
   - form_tag :action => 'next' do
     = @question.text
     %br
+    %br
     - @question.responses.each do |resp|
       = radio_button_tag 'response_id', resp.id, true
       = resp.text
       %br
+    %br
     =submit_tag "Next"
 - else
   - @results.each do |r|
