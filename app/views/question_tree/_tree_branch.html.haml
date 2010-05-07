@@ -1,0 +1,8 @@
+%ul
+  - tree.each do |key,t|
+    %li
+      - if !t.is_a?(Hash)
+        = "#{key} -> #{t.collect {|i| "Result #{i}"}.join(", ")}"
+      - else
+        = key
+        = render :partial => 'tree_branch', :locals => { :tree => t }

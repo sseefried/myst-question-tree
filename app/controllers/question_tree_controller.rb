@@ -15,4 +15,8 @@ class QuestionTreeController < ApplicationController
     render :action => 'index'
   end
 
+  def show_tree
+    @tree = Question.find(params[:id]).as_tree
+  end
+
 end
