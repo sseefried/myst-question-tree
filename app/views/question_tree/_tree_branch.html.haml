@@ -1,8 +1,10 @@
+= tree[:question]
 %ul
-  - tree.each do |key,t|
+  - tree[:responses].each do |response,obj|
     %li
-      - if !t.is_a?(Hash)
-        = "#{key} -> #{t.collect {|i| "Result #{i}"}.join(", ")}"
+      - if obj.is_a?(Array)
+        = "#{response} -> #{obj.collect {|i| "Result #{i}"}.join(", ")}"
       - else
-        = key
-        = render :partial => 'tree_branch', :locals => { :tree => t }
+        = "#{response} -> "
+        %br
+        = render :partial => 'tree_branch', :locals => { :tree => obj }
