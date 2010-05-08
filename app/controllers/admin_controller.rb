@@ -26,5 +26,25 @@ class AdminController < ApplicationController
       end
     end
   end
+  
+  # AJAX
+  def add_result
+  end
+  
+  # AJAX
+  def add_response
+  end
+  
+  # AJAX
+  def link_to_question
+  end
+
+  # AJAX
+  def delete_question
+  end
+  
+  #AJAX
+  def link_to_question
+  end
 
 end
