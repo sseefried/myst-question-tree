@@ -16,5 +16,9 @@ module ApplicationHelper
   def question_css_id(question)
     "question_#{question.id}"
   end
+  
+  def join_links(texts)
+    texts.join(%Q{<span class="tiny-text">|</span>})
+  end
 
 end

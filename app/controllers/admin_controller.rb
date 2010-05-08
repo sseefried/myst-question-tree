@@ -41,6 +41,14 @@ class AdminController < ApplicationController
 
   # AJAX
   def delete_question
+
+    # FIXME: Must make parent response become incomplete!
+
+    q = Question.find(params[:id])
+    q.destroy
+    render :update do |page|
+      page.replace_html question_css_id(q), :text => ''
+    end
   end
   
   #AJAX

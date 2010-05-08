@@ -1,7 +1,6 @@
 class Question < ActiveRecord::Base
   belongs_to :response # Could be +nil+
-  has_many :responses
-
+  has_many :responses, :dependent => :destroy
   named_scope :roots,  { :conditions => { :response_id => nil}}
   
   def is_root?
