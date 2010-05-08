@@ -17,5 +17,4 @@ class Question < ActiveRecord::Base
     end
     { :question => self.text, :responses => t }
   end
-
 end

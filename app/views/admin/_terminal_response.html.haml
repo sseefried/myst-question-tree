@@ -1,4 +1,4 @@
-%span.response= response.text
+= render :partial => 'response', :locals => { :response => response }
 %span.results= render :partial => 'result', :collection => response.results, :as => :result, :locals => { :response => response }
 =render :partial => 'add_result'
 

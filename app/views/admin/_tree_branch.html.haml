@@ -1,7 +1,10 @@
-%span.question= question.text
-= render :partial => 'delete_question', :locals => { :question => question }
-%span.tiny-text= "|" 
-= render :partial => 'add_response', :locals => { :question => question }
+%div{:id => question_css_id(question) }
+  %span.question= question.text
+  = render :partial => 'edit_question', :locals => { :question => question }
+  %span.tiny-text= "|"   
+  = render :partial => 'delete_question', :locals => { :question => question }
+  %span.tiny-text= "|" 
+  = render :partial => 'add_response', :locals => { :question => question }
 %ul
   - question.responses.each do |response|
     %li

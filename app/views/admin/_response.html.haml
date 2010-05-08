@@ -1,0 +1,3 @@
+%div{:id => response_text_css_id(response) }
+  = response.text
+  %span.tiny-text= link_to_remote 'Edit', :url => { :action => 'edit_response', :id => response.id}

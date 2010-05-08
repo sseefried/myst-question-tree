@@ -1,4 +1,4 @@
-%span.response{:class => "incomplete"}= response.text
+.incomplete= render :partial => 'response', :locals => { :response => response }
 %span.tiny-text{:id => "response_#{response.id}"}
 =render :partial => 'add_result'
 %span.tiny-text 

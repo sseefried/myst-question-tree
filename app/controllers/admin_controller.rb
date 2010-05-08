@@ -46,5 +46,13 @@ class AdminController < ApplicationController
   #AJAX
   def link_to_question
   end
+  
+  #AJAX
+  def edit_question
+  end
+  
+  #AJAX
+  def edit_response
+  end
 
 end
