@@ -1,2 +1,6 @@
 %span.response{:class => "incomplete"}= response.text
-%span.tiny-text{:id => "response_#{response.id}"}Add stuff!
+%span.tiny-text{:id => "response_#{response.id}"}
+=render :partial => 'add_result'
+%span.tiny-text 
+ %i or
+=render :partial => 'link_to_question'

@@ -1,4 +1,7 @@
 %span.question= question.text
+= render :partial => 'delete_question', :locals => { :question => question }
+%span.tiny-text= "|" 
+= render :partial => 'add_response', :locals => { :question => question }
 %ul
   - question.responses.each do |response|
     %li
