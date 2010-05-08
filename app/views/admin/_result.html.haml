@@ -1,0 +1,3 @@
+%span{:id => result_css_id(response,result)}
+  = result.id
+  = link_to_remote "X", :url => { :action => 'delete_result', :id => response.id, :result_id => result.id }

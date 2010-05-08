@@ -5,7 +5,10 @@ class Response < ActiveRecord::Base
 
   has_and_belongs_to_many :results
 
-#  validate :validate_is_link_or_terminal
+  # 
+  # A response is either a link, terminal (i.e. it has results) or it is incomplete. Incomplete responses
+  # will not appear in the site but they will appear in the admin interface.
+  # 
   
   def is_link?
     !child_question.nil?
@@ -14,13 +17,11 @@ class Response < ActiveRecord::Base
   def is_terminal?
     results.length > 0 
   end
-
-  protected
-
-  def validate_is_link_or_terminal
-    errors.add(:child_question, "can't be non-nil if there are results") if is_link? && is_terminal?
-    errors.add(:child_question, "can't be nil if there are no results") if !is_link? && !is_terminal?
+  
+  def is_incomplete?
+    results.length == 0 && !is_link? 
   end
+
 
 
 end

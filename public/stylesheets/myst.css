@@ -73,3 +73,21 @@ a:hover {
     color: rgb(224, 133, 102);
     text-decoration: underline;
 }
+
+/* Questions, responses and results */
+
+.question {
+  color: #0000FF;
+}
+
+.response {
+  color: #7777FF;
+}
+
+.incomplete {
+  color: red;
+}
+
+.results {
+  color: #666666;
+}

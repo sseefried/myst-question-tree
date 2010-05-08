@@ -1,0 +1,13 @@
+%span.question= question.text
+%ul
+  - question.responses.each do |response|
+    %li
+      - if response.is_terminal?
+        %div{:id => response_css_id(response) }
+          = render :partial => 'terminal_response', :locals => {:response => response }
+      - elsif response.is_link?
+        %span.response= response.text
+        %br
+        = render :partial => 'tree_branch', :locals => { :question => response.child_question }
+      - else 
+        = render :partial => 'incomplete_response', :locals => {:response => response}
