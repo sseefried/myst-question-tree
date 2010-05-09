@@ -1,0 +1,9 @@
+%li{:id => response_tree_css_id(response) }
+  - if response.is_terminal?
+    = render :partial => 'terminal_response', :locals => {:response => response }
+  - elsif response.is_link?
+    = render :partial => 'show_response', :locals => { :response => response }
+    %br
+    = render :partial => 'tree_branch', :locals => { :question => response.child_question }
+  - else 
+    = render :partial => 'incomplete_response', :locals => {:response => response}

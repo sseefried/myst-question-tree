@@ -1,0 +1,7 @@
+= question.text
+= render :partial => 'edit_question_link', :locals => { :question => question }
+- unless question.is_root?
+  %span.tiny-text= "|"   
+  = render :partial => 'delete_question', :locals => { :question => question }
+%span.tiny-text= "|" 
+= render :partial => 'add_response', :locals => { :question => question }

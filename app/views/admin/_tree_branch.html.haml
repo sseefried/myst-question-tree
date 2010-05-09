@@ -1,20 +1,6 @@
-%div{:id => question_css_id(question) }
-  %span.question= question.text
-  = render :partial => 'edit_question', :locals => { :question => question }
-  - unless question.is_root?
-    %span.tiny-text= "|"   
-    = render :partial => 'delete_question', :locals => { :question => question }
-  %span.tiny-text= "|" 
-  = render :partial => 'add_response', :locals => { :question => question }
-  %ul
-    - question.responses.each do |response|
-      %li
-        - if response.is_terminal?
-          %div{:id => response_css_id(response) }
-            = render :partial => 'terminal_response', :locals => {:response => response }
-        - elsif response.is_link?
-          %span.response= response.text
-          %br
-          = render :partial => 'tree_branch', :locals => { :question => response.child_question }
-        - else 
-          = render :partial => 'incomplete_response', :locals => {:response => response}
+%div{:id => question_tree_css_id(question)}
+  %span.question{:id => question_css_id(question)}
+    = render :partial => 'show_question', :locals => { :question => question }
+    %ul{:id => question_responses_css_id(question)}
+      - question.responses.each do |response|
+        = render :partial => 'response_tree', :locals => { :response => response }

@@ -1,1 +1,4 @@
-%span.tiny-text= link_to_remote 'Edit', :url => { :action => 'edit_question', :id => question.id }
+- remote_form_for :question, question, :url => { :action => 'update_question', :id => question.id } do |f|
+  = f.text_field :text, :size => 80
+  = submit_tag "Submit"
+  %span.tiny-text= link_to_remote "Cancel", :url => { :action => 'show_question', :id => question.id }
