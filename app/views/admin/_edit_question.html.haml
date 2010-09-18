@@ -2,3 +2,6 @@
   = f.text_field :text, :size => 80
   = submit_tag "Submit"
   %span.tiny-text= link_to_remote "Cancel", :url => { :action => 'show_question', :id => question.id }
+%ul{:id => question_responses_css_id(question)}
+  - question.responses.each do |response|
+    = render :partial => 'response_tree', :locals => { :response => response }
