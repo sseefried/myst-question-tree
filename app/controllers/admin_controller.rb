@@ -62,7 +62,8 @@ class AdminController < ApplicationController
   def delete_question
     q = Question.find(params[:id])
     render :update do |page|
-      page.replace_html response_css_id(q.response), :partial => 'incomplete_response', :locals => {:response => q.response }
+      page.replace_html response_css_id(q.response), :partial => 'incomplete_response',
+        :locals => {:response => q.response }
     end
     q.destroy
   end
@@ -120,6 +121,15 @@ class AdminController < ApplicationController
     render :update do |page|
       page.replace_html response_css_id(r), :partial => 'show_response', :locals => { :response => r}
     end
+  end
+
+  # AJAX
+  def delete_response
+    r = Response.find(params[:id])
+    render :update do |page|
+      page.remove response_tree_css_id(r)
+    end
+    r.destroy
   end
 
 end
