@@ -95,6 +95,11 @@ class AdminController < ApplicationController
 
   #AJAX
   def link_to_question
+    r = Response.find(params[:id])
+    q = Question.create(:text => "", :response => r)
+    render :update do |page|
+      page.replace_html response_tree_css_id(r), :partial => 'response_tree', :locals => {:response => r}
+    end
   end
 
   #AJAX
