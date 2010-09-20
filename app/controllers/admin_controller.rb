@@ -70,7 +70,7 @@ class AdminController < ApplicationController
   def delete_question
     q = Question.find(params[:id])
     render :update do |page|
-      page.replace_html response_css_id(q.response), :partial => 'incomplete_response',
+      page.replace_html response_tree_css_id(q.response), :partial => 'incomplete_response',
         :locals => {:response => q.response }
     end
     q.destroy
