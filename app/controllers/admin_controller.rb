@@ -26,7 +26,7 @@ class AdminController < ApplicationController
     render :update do |page|
       to_update.each do |resp|
         if resp.results(true).empty?
-         page.replace_html response_css_id(resp), :partial => 'incomplete_response', :locals => { :response => resp}
+         page.replace_html response_tree_css_id(resp), :partial => 'incomplete_response', :locals => { :response => resp}
         else
          page.replace_html result_css_id(resp, result_to_delete), :text => ''
         end
