@@ -26,7 +26,8 @@ class AdminController < ApplicationController
     render :update do |page|
       to_update.each do |resp|
         if resp.results(true).empty?
-         page.replace_html response_tree_css_id(resp), :partial => 'incomplete_response', :locals => { :response => resp}
+         page.replace_html response_tree_css_id(resp), :partial => 'incomplete_response',
+                                                       :locals => { :response => resp}
         else
          page.replace_html result_css_id(resp, result_to_delete), :text => ''
         end
@@ -56,14 +57,8 @@ class AdminController < ApplicationController
     render :update do |page|
       page.hide(params[:div_id])
       page.insert_html :bottom, question_responses_css_id(r.question),
-                       :partial => 'response_tree', :locals => { :response => r}
+                       :partial => 'response_tree', :locals => { :response => r }
     end
-  end
-
-
-
-  # AJAX
-  def link_to_question
   end
 
   # AJAX
@@ -80,7 +75,7 @@ class AdminController < ApplicationController
   def edit_question
     q = Question.find(params[:id])
     render :update do |page|
-      page.replace_html question_css_id(q), :partial => 'edit_question', :locals => { :question => q}
+      page.replace_html question_css_id(q), :partial => 'edit_question', :locals => { :question => q }
     end
   end
 
@@ -92,6 +87,7 @@ class AdminController < ApplicationController
     end
   end
 
+
   # AJAX
   def update_question
     q = Question.find(params[:id])
@@ -101,14 +97,31 @@ class AdminController < ApplicationController
     end
   end
 
+  def create_question
+    r = Response.find(params[:id])
+    q = Question.create(params[:question])
+    render :update do |page|
+      page.replace_html response_tree_css_id(r), :partial => 'response_tree', :locals => { :response => r }
+
+    end
+  end
+
   #AJAX
   def link_to_question
     r = Response.find(params[:id])
-    q = Question.create(:text => "", :response => r)
     render :update do |page|
-      page.replace_html response_tree_css_id(r), :partial => 'response_tree', :locals => {:response => r}
+      page.replace_html response_tree_css_id(r), :partial => 'new_question', :locals => { :response=> r }
     end
   end
+
+  #AJAX
+  def cancel_link_to_question
+    r = Response.find(params[:id])
+    render :update do |page|
+      page.replace_html response_tree_css_id(r), :partial => 'incomplete_response', :locals => { :response => r}
+    end
+  end
+
 
   #AJAX
   def edit_response

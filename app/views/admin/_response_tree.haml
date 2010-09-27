@@ -5,5 +5,5 @@
     = render :partial => 'show_response', :locals => { :response => response }
     %br
     = render :partial => 'tree_branch', :locals => { :question => response.child_question }
-  - else 
+  - else
     = render :partial => 'incomplete_response', :locals => {:response => response}
