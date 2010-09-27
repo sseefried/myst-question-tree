@@ -1,4 +1,3 @@
 = render :partial => 'show_response', :locals => { :response => response }
 %span.results= render :partial => 'result', :collection => response.results, :as => :result, :locals => { :response => response }
-=render :partial => 'add_result'
-
+= render :partial => 'add_result', :locals => { :response => response }

@@ -1,6 +1,6 @@
 - if !@question.nil?
   - form_tag :action => 'next' do
-    = @question.text
+    %span.question= @question.text
     %br
     %br
     - @question.responses.each do |resp|

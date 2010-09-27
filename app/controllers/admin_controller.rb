@@ -37,7 +37,22 @@ class AdminController < ApplicationController
 
   # AJAX
   def add_result
+    r = Response.find(params[:id])
+    @result = Result.create(:textile => "")
+    render :edit_result
+  end
 
+  def update_result
+    if params[:commit] == 'Preview'
+      @result = Result.find(params[:id])
+      @result.textile = params[:result][:textile]
+      render :edit_result
+    end
+  end
+
+  def preview
+    @textile = params[:textile]
+    render :action => 'preview', :layout => false
   end
 
   # AJAX

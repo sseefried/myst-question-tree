@@ -1,5 +1,5 @@
 %span{:id => response_css_id(response) }
-  = response.text
+  %span.response= response.text
   %span.tiny-text= link_to_remote 'Edit', :url => { :action => 'edit_response', :id => response.id }
   %span.tiny-text= "|"
   %span.tiny-text= link_to_remote 'X', :url => { :action => 'delete_response', :id => response.id}

@@ -4,7 +4,7 @@ body {
 }
 
 .middle {
-  background-position: center; 
+  background-position: center;
   background-image: url( "../images/middle_background.png" );
 }
 
@@ -81,10 +81,10 @@ a:hover {
 }
 
 .response {
-  color: #7777FF;
+  color: #00aa00;
 }
 
-.incomplete {
+.incomplete .response {
   color: red;
 }
 

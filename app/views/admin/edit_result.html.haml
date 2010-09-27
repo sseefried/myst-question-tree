@@ -1,0 +1,7 @@
+- form_for :result, :url => { :action => 'update_result', :id => @result.id} do |f|
+  = f.text_area :textile, :size => 80
+  %br
+  = submit_tag "Preview"
+  = submit_tag "Submit"
+  %iframe{:src => url_for(:action => 'preview', :textile => @result.textile), :width => 600}
+
