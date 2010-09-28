@@ -19,7 +19,7 @@
         <%= image_tag 'myst_rgb.jpg', :style=>"border: none; height: 56px; width: 82px; " %>
       </div>
 
-      <!-- HEADER -->      
+      <!-- HEADER -->
       <div class="header">
         <p style="padding-top: 0pt; " class="header-text">MOUNTAINS YOUTH<br /></p>
         <p style="padding-bottom: 0pt; " class="header-text">SERVICES TEAM</p>
@@ -28,7 +28,10 @@
       <%= yield %>
     </div><!-- content -->
     <div class="content tiny-text" style="border-top: 1px solid #CCC">
-        <a href="http://myst.com.au">Home</a> | <a href="">Contact us</a></div>
+        <a href="/">Home</a> | <a href="http://myst.com.au">MYST</a> | <a href="">Contact us</a>
+        | <%= link_to "Admin", :controller => 'admin', :action => 'list_tree' %>
+
+    </div>
   </div><!-- middle -->
 
   <div class="bottom"></div>

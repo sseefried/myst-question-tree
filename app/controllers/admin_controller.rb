@@ -49,7 +49,12 @@ class AdminController < ApplicationController
 
   def update_result
     if params[:commit] == 'Preview'
-      @result = Result.find(params[:id])
+      @response = Response.find(params[:response_id])
+      if params[:id]
+        @result = Result.find(params[:id])
+      else
+        @result = Result.new
+      end
       @result.textile = params[:result][:textile]
       render :edit_result
     else
