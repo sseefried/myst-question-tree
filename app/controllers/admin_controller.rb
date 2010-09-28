@@ -37,9 +37,14 @@ class AdminController < ApplicationController
 
   # AJAX
   def add_result
-    r = Response.find(params[:id])
-    @result = Result.create(:textile => "")
+    @response = Response.find(params[:id])
+    @result   = Result.new(:textile => "")
     render :edit_result
+  end
+
+  def edit_result
+    @result = Result.find(params[:id])
+    @response = Response.find(params[:response_id])
   end
 
   def update_result
@@ -47,6 +52,17 @@ class AdminController < ApplicationController
       @result = Result.find(params[:id])
       @result.textile = params[:result][:textile]
       render :edit_result
+    else
+      if params[:id]
+        result = Result.find(params[:id])
+        result.update_attributes(params[:result])
+      else
+        result = Result.create(params[:result])
+        r = Response.find(params[:response_id])
+        r.results << result
+        r.save
+      end
+      redirect_to :action => 'list_tree'
     end
   end
 

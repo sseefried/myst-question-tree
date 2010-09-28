@@ -91,3 +91,5 @@ a:hover {
 .results {
   color: #666666;
 }
+
+.result-link a { color: #333; }
