@@ -1,3 +1,4 @@
+- admin = false unless defined?(admin)
 - form_tag :action => 'next' do
   %div
     = RedCloth.new(@question.textile || "").to_html
