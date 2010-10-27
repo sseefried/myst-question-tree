@@ -42,6 +42,11 @@ class AdminController < ApplicationController
     render :edit_result
   end
 
+  def show_question
+    @question = Question.find(params[:id])
+    render :show_question
+  end
+
   def show_result
     @result = Result.find(params[:id])
     @response = Response.find(params[:response_id])
@@ -123,7 +128,7 @@ class AdminController < ApplicationController
   end
 
   # AJAX
-  def show_question
+  def ajax_show_question
     q = Question.find(params[:id])
     render :update do |page|
       page.replace_html question_css_id(q), :partial => 'tree_branch', :locals => { :question => q}

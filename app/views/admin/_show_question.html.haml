@@ -1,4 +1,6 @@
 %span.question= question.text
+%span.tiny-text= link_to "Show", :action => 'show_question', :id => question.id
+%span.tiny-text= "|"
 = render :partial => 'edit_question_link', :locals => { :question => question }
 - unless question.is_root?
   %span.tiny-text= "|"

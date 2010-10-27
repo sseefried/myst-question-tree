@@ -1,17 +1,5 @@
 - if !@question.nil?
-  - form_tag :action => 'next' do
-    %span.question= @question.text
-    %br
-    %br
-    - @question.responses.each_with_index do |resp, i|
-      = radio_button_tag 'response_id', resp.id, i == 0
-      = resp.text
-      %br
-    %br
-    =submit_tag "Next"
+  = render :partial => 'show_question' 
 - else
   - @results.each do |r|
-    %div
-      = RedCloth.new(r.textile).to_html
-    %br
-    =link_to "Start again", :action => 'index'
+    = render :partial => 'show_result', :locals => {:result => r, :admin => false}

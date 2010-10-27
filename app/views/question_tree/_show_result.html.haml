@@ -1,0 +1,11 @@
+= RedCloth.new(result.textile).to_html
+- if admin
+  - form_for :result, :url => { :action => 'update_result', :id => result.id} do |f|
+    %br
+    %br
+    %span.tiny-text=link_to "Back to tree", :action => 'list_tree'
+    %span.tiny-text='|'
+    %span.tiny-text=result_edit_link(result, response) 
+- else
+  %br
+  =link_to "Start again", :action => 'index'

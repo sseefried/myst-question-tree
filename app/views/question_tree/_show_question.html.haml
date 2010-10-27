@@ -1,0 +1,18 @@
+- form_tag :action => 'next' do
+  %div
+    = RedCloth.new(@question.textile || "").to_html
+  %span.question= @question.text
+  %br
+  %br
+  - @question.responses.each_with_index do |resp, i|
+    = radio_button_tag 'response_id', resp.id, i == 0, :disabled => admin
+    = resp.text
+    %br
+  %br
+  =submit_tag "Next", :disabled => admin
+- if admin
+  %br
+  %span.tiny-text=link_to "Back to tree", :controller => 'admin', :action => 'list_tree'
+  %span.tiny-text='|'
+  %span.tiny-text Edit
+ 
