@@ -1,6 +1,9 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
+  MAX_TEXT_LENGTH = 50
+  ELLIPSES_LENGTH = 3
+
   def response_tree_css_id(response)
     "response_tree_#{response.id}"
   end
@@ -34,6 +37,13 @@ module ApplicationHelper
   def usec_timestamp
     t = Time.zone.now
     "#{t.to_i}#{t.usec}"
+  end
+  
+  def shorten(text)
+    if text.length > MAX_TEXT_LENGTH
+    then  "#{text[0..MAX_TEXT_LENGTH-3]}..."
+    else text end
+      
   end
 
 end
