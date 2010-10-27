@@ -38,6 +38,12 @@ module ApplicationHelper
     t = Time.zone.now
     "#{t.to_i}#{t.usec}"
   end
+
+  def result_link(link_text, result, response)
+    link_to link_text, { :action => 'edit_result', 
+                                    :id => result.id, 
+                                    :response_id => response.id }, {:title => result.name}
+  end
   
   def shorten(text)
     if text.length > MAX_TEXT_LENGTH

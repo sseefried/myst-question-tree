@@ -1,4 +1,6 @@
 %div{:id => result_css_id(response,result)}
-  %span.result-link=link_to shorten(result.name), { :action => 'edit_result', :id => result.id, :response_id => response.id }, {:title => result.name}
+  %span= result.name
+  %span.tiny-text=result_link("Edit", result, response) 
+  %span.tiny-text= '|'
   %span.tiny-text= link_to_remote "Delete", :url => { :action => 'delete_result', :id => response.id, :result_id => result.id }, :confirm => "Are you sure you want to delete this result? Deleting it will remove it from all responses it's currently related to!"
 
