@@ -53,14 +53,17 @@ class AdminController < ApplicationController
   end
 
   def update_result
+    @response = Response.find(params[:response_id])
     if params[:commit] == 'Preview'
-      @response = Response.find(params[:response_id])
       if params[:id]
         @result = Result.find(params[:id])
       else
         @result = Result.new
       end
-      @result.textile = params[:result][:textile]
+      params[:result].each do |key, value|
+        method = "#{key}="
+        @result.send(method, value) if @result.respond_to?(method)
+      end 
       render :edit_result
     else
       if params[:id]
@@ -68,7 +71,6 @@ class AdminController < ApplicationController
         @result.update_attributes(params[:result])
       else
         @result = Result.create(params[:result])
-        @response = Response.find(params[:response_id])
         @response.results << @result
         @response.save
       end

@@ -1,9 +1,17 @@
 - form_for :result, :url => { :action => 'update_result', :id => @result.id} do |f|
-  = f.text_field :name, :size => 80
-  = f.text_area :textile, :size => 80
+  %div 
+    =f.label :name, "Name"
+    %span.tiny-text (Only used in the admin tree view)
+    %br
+    =f.text_field :name, :size => 80
+  %div
+    =f.label :textile, "Textile code"
+    %br
+    = f.text_area :textile, :cols => 80
   = hidden_field_tag 'response_id', @response.id
   %br
   = submit_tag "Preview"
   = submit_tag "Submit"
-  %iframe{:src => url_for(:action => 'preview', :textile => @result.textile), :width => 600}
+  %h2 Preview
+  %iframe{:src => url_for(:action => 'preview', :textile => @result.textile), :width => 600, :height => 500}
 
