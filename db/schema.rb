@@ -12,7 +12,7 @@
 ActiveRecord::Schema.define(:version => 20100506122058) do
 
   create_table "questions", :force => true do |t|
-    t.string   "text",        :null => false
+    t.text     "text",        :null => false
     t.integer  "response_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20100506122058) do
   end
 
   create_table "results", :force => true do |t|
+    t.text     "name",       :null => false
     t.text     "textile",    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"

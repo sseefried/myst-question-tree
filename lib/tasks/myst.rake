@@ -1,14 +1,20 @@
 namespace :myst do
+  desc "Upload test data into the database"
   task :test_data => :environment do
     Question.delete_all
     Response.delete_all
     Result.delete_all
 
-    r1 = Result.create({:textile => "Call: Child & Adolescent Mental Health Service"})
-    r2 = Result.create({:textile => "Call: Mountains Youth Services Team"})
-    r3 = Result.create({:textile => "Call: Sydney West Area Health Service"})
-    r4 = Result.create({:textile => "Call: Katoomba Community Health Service"})
-    r5 = Result.create({:textile => "Call: Nepean Adolescent Drug and Alcohol Intervention Service" })
+    r1 = Result.create({:name => 'Child & Adolescent Mental Health Service',
+                        :textile => "Call: Child & Adolescent Mental Health Service"})
+    r2 = Result.create({:name => "Mountains Youth Services Team",
+                        :textile => "Call: Mountains Youth Services Team"})
+    r3 = Result.create({:name => "Sydney West Area Health Service",
+                        :textile => "Call: Sydney West Area Health Service"})
+    r4 = Result.create({:name => "Katoomba Community Health Service",
+                        :textile => "Call: Katoomba Community Health Service"})
+    r5 = Result.create({:name => "Nepean Adolescent Drug and Alcohol Intervention Service",
+                        :textile => "Call: Nepean Adolescent Drug and Alcohol Intervention Service" })
 
     start = Question.create({:text => "Is the client in immediate risk of self harm or to others?" })
 
@@ -34,8 +40,5 @@ namespace :myst do
 
     r_q4_1 = Response.create({:text => "Yes", :question => q4, :results => [r5]})
     r_q4_2 = Response.create({:text => "No", :question => q4, :results => [r5]})
-
-
-
   end
 end
