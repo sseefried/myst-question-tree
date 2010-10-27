@@ -42,6 +42,11 @@ class AdminController < ApplicationController
     render :edit_result
   end
 
+  def show_result
+    @result = Result.find(params[:id])
+    @response = Response.find(params[:response_id])
+  end
+
   def edit_result
     @result = Result.find(params[:id])
     @response = Response.find(params[:response_id])
@@ -59,15 +64,15 @@ class AdminController < ApplicationController
       render :edit_result
     else
       if params[:id]
-        result = Result.find(params[:id])
-        result.update_attributes(params[:result])
+        @result = Result.find(params[:id])
+        @result.update_attributes(params[:result])
       else
-        result = Result.create(params[:result])
-        r = Response.find(params[:response_id])
-        r.results << result
-        r.save
+        @result = Result.create(params[:result])
+        @response = Response.find(params[:response_id])
+        @response.results << @result
+        @response.save
       end
-      redirect_to :action => 'list_tree'
+      render :action => 'show_result'
     end
   end
 

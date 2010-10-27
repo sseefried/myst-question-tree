@@ -39,10 +39,26 @@ module ApplicationHelper
     "#{t.to_i}#{t.usec}"
   end
 
-  def result_link(link_text, result, response)
-    link_to link_text, { :action => 'edit_result', 
-                                    :id => result.id, 
-                                    :response_id => response.id }, {:title => result.name}
+  def result_show_link(result, response)
+    link_to "Show", { :action => 'show_result', 
+                      :id => result.id, 
+                      :response_id => response.id }, {:title => result.name }
+  end
+
+  def result_edit_link(result, response)
+    link_to "Edit", { :action => 'edit_result', 
+                      :id => result.id, 
+                      :response_id => response.id }, {:title => result.name }
+  end
+
+
+  def result_delete_link(result, response)
+    link_to_remote "Delete", 
+      :url => { :action => 'delete_result', 
+      :id => response.id, 
+      :result_id => result.id }, 
+      :confirm => "Are you sure you want to delete this result? Deleting it will remove it from all "+
+                  "responses it's currently related to!"
   end
   
   def shorten(text)
