@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
 
   def index
-    @trees = Tree.all
+    @trees = Tree.unhidden
   end
 
   def new_tree
@@ -33,6 +33,22 @@ class AdminController < ApplicationController
   def show_tree
     @tree = Tree.find(params[:id])
     @question = @tree.root_question
+  end
+
+  # This does not actually delete the trees. It just hides them.
+  def delete_tree
+    tree = Tree.find(params[:id])
+    tree.update_attribute(:hidden, true)
+    flash[:notice] = 
+      %Q{You have just deleted the tree called `#{tree.name}'. This is your last chance to undo this.}
+    flash[:undo_delete_id] = tree.id
+    redirect_to :action => 'index'
+  end
+
+  def undo_delete_tree
+    tree = Tree.find(params[:id])
+    tree.update_attribute(:hidden,false)
+    redirect_to :action => 'index'
   end
 
   # AJAX

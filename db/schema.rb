@@ -42,8 +42,9 @@ ActiveRecord::Schema.define(:version => 20101027220410) do
   end
 
   create_table "trees", :force => true do |t|
-    t.text     "name",             :null => false
+    t.text     "name",                                :null => false
     t.text     "permalink"
+    t.boolean  "hidden",           :default => false, :null => false
     t.integer  "root_question_id"
     t.datetime "created_at"
     t.datetime "updated_at"

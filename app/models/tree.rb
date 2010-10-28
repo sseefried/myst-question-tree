@@ -7,6 +7,10 @@ class Tree < ActiveRecord::Base
   
   validates_uniqueness_of :name
   
+  def self.unhidden
+    self.find(:all, :conditions => ['hidden = ?', false])
+  end
+
   def set_permalink
     self.permalink = words_for_permalink.join("-")
   end

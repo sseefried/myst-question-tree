@@ -3,6 +3,7 @@ class CreateTrees < ActiveRecord::Migration
     create_table :trees do |t|
       t.text    :name, :null => false
       t.text    :permalink
+      t.boolean :hidden, :null => false, :default => false
       t.integer :root_question_id # Can be null for a while
       t.timestamps
     end

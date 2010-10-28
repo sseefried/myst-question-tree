@@ -131,3 +131,9 @@ a:hover {
   font-size: 12px;
   list-style: square;
 }
+
+.notice {
+  border: 1px solid #FFFF00;
+  padding: 5px;
+  background: #FFFFCC;
+}

@@ -1,7 +1,7 @@
 class QuestionTreeController < ApplicationController
 
   def index
-    @trees = Tree.all
+    @trees = Tree.unhidden
   end
 
   def show
@@ -10,8 +10,12 @@ class QuestionTreeController < ApplicationController
     else
       Tree.find(params[:id])
     end
-    @question = tree.root_question
-    render :action => 'show'
+    if @question
+      @question = tree.root_question
+      render :action => 'show'
+    else
+      render :action => 'not_found'
+    end
   end
 
 
