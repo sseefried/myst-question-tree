@@ -134,6 +134,7 @@ a:hover {
 
 .notice {
   border: 1px solid #FFFF00;
-  padding: 5px;
+  padding: 10px;
+  color: #555500;
   background: #FFFFCC;
 }

@@ -2,7 +2,9 @@
 - if flash[:notice]
   %div.notice
     = flash[:notice]
-    = link_to "Undo delete", :action => "undo_delete_tree", :id => flash[:undo_delete_id] if flash[:undo_delete_id]
+    -if flash[:undo_delete_id]
+      %br
+      = link_to "Undo delete", :action => "undo_delete_tree", :id => flash[:undo_delete_id]
 %ul
   - @trees.each do |tree|
     - permalink_url = "#{root_url}tree/#{tree.permalink}"
