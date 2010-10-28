@@ -2,4 +2,7 @@
 
 git push heroku master
 heroku config:add RAILS_ENV=production
+
+heroku rake db:create
+heroku rake db:migrate
 heroku rake myst:test_data
