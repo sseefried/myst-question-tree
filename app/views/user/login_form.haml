@@ -1,0 +1,9 @@
+%h2 Admin login
+- if flash[:errors]
+  %div#errorExplanation
+    = flash[:errors]
+- form_for :user, :url => {:action => 'login'} do |f|
+  =f.label :password, "Password"
+  =f.password_field :password
+  %br
+  =f.submit "Login"

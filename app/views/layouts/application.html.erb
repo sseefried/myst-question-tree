@@ -12,7 +12,18 @@
 <body>
 
   <div class="middle">
+
     <div class="content" >
+      <% if session[:user_id] -%>
+        <div class="small-text">
+          Signed in as <strong>admin</strong> | 
+          <%= link_to "Change password", :controller => 'user', :action => 'change_password_form'%>
+          |
+          <%= link_to "Logout", :controller => 'user', :action => 'logout'%>
+        </div>
+        <hr>
+      <% end -%>
+
       <!-- Logo -->
       <div style="float: right;">
         <p class="tiny-text">Blue Mountains, NSW, Australia</p>

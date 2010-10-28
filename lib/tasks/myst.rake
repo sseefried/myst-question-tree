@@ -1,4 +1,20 @@
 namespace :myst do
+  desc "Reset the admin user's password to the one given"
+  task :reset_admin_password, :password, :needs => :environment do |t, args|
+    if args[:password]
+      u = User.find_by_username('admin')
+      u.delete if u
+      User.create({:username => 'admin', :password => args[:password], 
+                   :password_confirmation => args[:password],
+                   :email => 'onlinedamian@gmail.com'})
+      puts "Password reset to `#{args[:password]}'"
+    else
+
+      puts "Usage: rake #{t.name}[<password>]"
+    end
+  end
+
+
   desc "Upload test data into the database"
   task :test_data => :environment do
     Tree.delete_all

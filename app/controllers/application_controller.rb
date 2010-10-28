@@ -10,13 +10,11 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
 
-  def help
-      Helper.instance
+  def check_admin
+    if session[:user_id].nil?
+      redirect_to :controller => 'user', :action => 'login_form'
     end
+  end
 
-    class Helper
-      include Singleton
-      include ActionView::Helpers::UrlHelper
-    end
 
 end
