@@ -2,7 +2,7 @@
   = f.hidden_field :tree_id, :value => @result.tree_id
   %div 
     =f.label :name, "Name"
-    %span.tiny-text (Only used in the admin tree view)
+    %span.tiny-text (Not shown to the user. Just for admin users to identify it in the tree view)
     %br
     =f.text_field :name, :size => 80
   %div

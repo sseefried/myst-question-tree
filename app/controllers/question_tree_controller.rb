@@ -10,8 +10,8 @@ class QuestionTreeController < ApplicationController
     else
       Tree.find(params[:id])
     end
-    if @question
-      @question = tree.root_question
+    @question = tree.root_question
+    if @question && !tree.hidden
       render :action => 'show'
     else
       render :action => 'not_found'
