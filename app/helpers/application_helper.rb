@@ -70,5 +70,10 @@ module ApplicationHelper
   def permalink_for(tree)
     "/tree/#{tree.permalink}"
   end
+  
+  def textile_link
+     link_to "Textile Reference", "http://redcloth.org/hobix.com/textile/", 
+        :popup => ['new_window_name', 'height=300,width=600']
+  end
 
 end

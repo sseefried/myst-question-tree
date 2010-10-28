@@ -4,7 +4,7 @@
   = f.text_field :text, :size => 80
   %br
   = f.label :textile, "Additional description"
-  %span.small-text (marked up in textile)
+  %span.small-text= textile_link
   %br
   = f.text_area :textile, :cols => 80
   = submit_tag "Submit"

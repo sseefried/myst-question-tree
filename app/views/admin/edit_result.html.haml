@@ -7,6 +7,7 @@
     =f.text_field :name, :size => 80
   %div
     =f.label :textile, "Textile code"
+    %span.small-text= textile_link
     %br
     = f.text_area :textile, :cols => 80
   = hidden_field_tag 'response_id', @response.id
