@@ -1,7 +1,5 @@
 - admin = false unless defined?(admin)
 - form_tag :action => 'next' do
-  %div
-    = RedCloth.new(@question.textile || "").to_html
   %span.question= @question.text
   %br
   %br
@@ -9,11 +7,13 @@
     = radio_button_tag 'response_id', resp.id, i == 0, :disabled => admin
     = resp.text
     %br
+  %div
+    = RedCloth.new(@question.textile || "").to_html
   %br
   =submit_tag "Next", :disabled => admin
 - if admin
   %br
   %span.tiny-text=link_to "Back to tree", :controller => 'admin', :action => 'show_tree', :id => question.tree
   %span.tiny-text='|'
-  %span.tiny-text Edit
+  %span.tiny-text=link_to "Edit", :controller => 'admin', :action => 'edit_question', :id => question.id
  

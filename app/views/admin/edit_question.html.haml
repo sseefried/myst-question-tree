@@ -1,0 +1,11 @@
+- form_for :question, :url => { :action => 'update_question', :id => @question.id } do |f|
+  = f.hidden_field :tree_id, :value => @question.tree_id
+  = f.label :text, "Question"
+  = f.text_field :text, :size => 80
+  %br
+  = f.label :textile, "Additional description"
+  %span.small-text (marked up in textile)
+  %br
+  = f.text_area :textile, :cols => 80
+  = submit_tag "Submit"
+  %span.tiny-text= link_to "Cancel", { :action => 'show_tree', :id => @question.tree_id }

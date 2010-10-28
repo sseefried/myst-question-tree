@@ -159,13 +159,8 @@ class AdminController < ApplicationController
     q.destroy
   end
 
-  #AJAX
   def edit_question
-    q = Question.find(params[:id])
-    render :update do |page|
-      page.replace_html question_css_id(q), :partial => 'edit_question', 
-        :locals => { :question => q, :tree => q.tree }
-    end
+    @question = Question.find(params[:id])
   end
 
   # AJAX
@@ -176,15 +171,13 @@ class AdminController < ApplicationController
     end
   end
 
-  # AJAX
   def update_question
-    q = Question.find(params[:id])
-    q.update_attributes(params[:question])
-    render :update do |page|
-      page.replace_html question_css_id(q), :partial => 'tree_branch', :locals => { :question => q}
-    end
+    @question = Question.find(params[:id])
+    @question.update_attributes(params[:question])
+    render :action => 'show_question'
   end
 
+  # AJAX
   def create_question
     r = Response.find(params[:id])
     q = Question.create(params[:question])
