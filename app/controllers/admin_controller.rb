@@ -1,21 +1,43 @@
 class AdminController < ApplicationController
 
   def index
-    redirect_to :action => 'list_tree'
+    @trees = Tree.all
   end
 
-  def list_tree
-    # FIXME: Show them all
-    @question = Question.roots.first
+  def new_tree
+    @tree = Tree.new
+  end
+  
+  def edit_tree
+    @tree = Tree.find(params[:id])
+    render :action => 'new_tree'
+  end
+  
+  def update_tree
+    if params[:id]
+      @tree = Tree.find(params[:id])
+      @tree.update_attributes(params[:tree])
+    else
+      @tree = Tree.create(params[:tree])
+      root_question = Question.create({:text => "Sample question. Please edit me.", :tree => @tree})
+      @tree.update_attribute(:root_question, root_question)
+    end
+    if @tree.errors.count > 0 
+      flash[:notice] = @tree.errors
+      render :action => 'new_tree'
+    else
+      redirect_to :action => 'index'
+    end
+  end
+
+  def show_tree
+    @tree = Tree.find(params[:id])
+    @question = @tree.root_question
   end
 
   # AJAX
   def delete_result
-#   resp = Response.find(params[:id])
-#   results = resp.results
     result_to_delete = Result.find(params[:result_id])
-
-
     to_update = []
     Response.all.each do |resp|
       to_update << resp if resp.results.select {|r| r.id == result_to_delete.id }.length > 0
@@ -38,7 +60,7 @@ class AdminController < ApplicationController
   # AJAX
   def add_result
     @response = Response.find(params[:id])
-    @result   = Result.new(:textile => "")
+    @result   = Result.new(:textile => "", :tree => @response.tree)
     render :edit_result
   end
 
@@ -94,7 +116,9 @@ class AdminController < ApplicationController
     render :update do |page|
       page.insert_html :bottom, question_responses_css_id(q),
                        :partial => 'new_response',
-                       :locals => { :question => q, :div_id => "response_#{usec_timestamp}" }
+                       :locals => { :question => q, 
+                                    :div_id => "response_#{usec_timestamp}",
+                                    :tree => q.tree }
     end
   end
 
@@ -123,7 +147,8 @@ class AdminController < ApplicationController
   def edit_question
     q = Question.find(params[:id])
     render :update do |page|
-      page.replace_html question_css_id(q), :partial => 'edit_question', :locals => { :question => q }
+      page.replace_html question_css_id(q), :partial => 'edit_question', 
+        :locals => { :question => q, :tree => q.tree }
     end
   end
 
@@ -134,7 +159,6 @@ class AdminController < ApplicationController
       page.replace_html question_css_id(q), :partial => 'tree_branch', :locals => { :question => q}
     end
   end
-
 
   # AJAX
   def update_question
@@ -158,7 +182,8 @@ class AdminController < ApplicationController
   def link_to_question
     r = Response.find(params[:id])
     render :update do |page|
-      page.replace_html response_tree_css_id(r), :partial => 'new_question', :locals => { :response=> r }
+      page.replace_html response_tree_css_id(r), :partial => 'new_question', 
+        :locals => { :response=> r, :tree => r.tree }
     end
   end
 
@@ -175,7 +200,8 @@ class AdminController < ApplicationController
   def edit_response
     r = Response.find(params[:id])
     render :update do |page|
-      page.replace_html response_css_id(r), :partial => 'edit_response', :locals => { :response => r }
+      page.replace_html response_css_id(r), :partial => 'edit_response', 
+        :locals => { :response => r, :tree => r.tree }
     end
 
   end

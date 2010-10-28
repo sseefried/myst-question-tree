@@ -1,0 +1,7 @@
+%h2= @tree.name
+%span.small-text
+  =link_to "&lsaquo;&lsaquo; Edit another question tree", :action => 'index'
+  | 
+  =link_to "See question tree as user &rsaquo;&rsaquo;", permalink_for(@question.tree)
+%hr
+= render :partial => 'tree_branch', :locals => { :question => @question }

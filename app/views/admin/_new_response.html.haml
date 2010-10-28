@@ -1,5 +1,6 @@
 %li{:id => div_id }
   - remote_form_for :response, :url => { :action => 'new_response', :div_id => div_id, :question_id => question.id } do |f|
     = f.text_field :text, :size => 40
+    = f.hidden_field :tree_id, :value => tree.id
     = submit_tag "Ok"
     %a{:class => 'tiny-text', :href => "#", :onclick => "$('#{div_id}').hide()" } Cancel

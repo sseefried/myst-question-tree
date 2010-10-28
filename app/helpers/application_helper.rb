@@ -65,7 +65,10 @@ module ApplicationHelper
     if text.length > MAX_TEXT_LENGTH
     then  "#{text[0..MAX_TEXT_LENGTH-3]}..."
     else text end
-      
+  end
+  
+  def permalink_for(tree)
+    "/tree/#{tree.permalink}"
   end
 
 end

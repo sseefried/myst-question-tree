@@ -9,18 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100506122058) do
+ActiveRecord::Schema.define(:version => 20101027220410) do
 
   create_table "questions", :force => true do |t|
     t.text     "text",        :null => false
     t.text     "textile"
     t.integer  "response_id"
+    t.integer  "tree_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "responses", :force => true do |t|
     t.integer  "question_id", :null => false
+    t.integer  "tree_id",     :null => false
     t.string   "text",        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -34,6 +36,15 @@ ActiveRecord::Schema.define(:version => 20100506122058) do
   create_table "results", :force => true do |t|
     t.text     "name",       :null => false
     t.text     "textile",    :null => false
+    t.integer  "tree_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trees", :force => true do |t|
+    t.text     "name",             :null => false
+    t.text     "permalink"
+    t.integer  "root_question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

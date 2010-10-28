@@ -1,4 +1,5 @@
 - form_for :result, :url => { :action => 'update_result', :id => @result.id} do |f|
+  = f.hidden_field :tree_id, :value => @result.tree_id
   %div 
     =f.label :name, "Name"
     %span.tiny-text (Only used in the admin tree view)

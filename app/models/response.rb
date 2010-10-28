@@ -1,5 +1,6 @@
 class Response < ActiveRecord::Base
 
+  belongs_to :tree
   belongs_to :question, :class_name => "Question"
   has_one :child_question, :class_name => "Question", :dependent => :destroy
 

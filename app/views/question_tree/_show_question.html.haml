@@ -13,7 +13,7 @@
   =submit_tag "Next", :disabled => admin
 - if admin
   %br
-  %span.tiny-text=link_to "Back to tree", :controller => 'admin', :action => 'list_tree'
+  %span.tiny-text=link_to "Back to tree", :controller => 'admin', :action => 'show_tree', :id => question.tree
   %span.tiny-text='|'
   %span.tiny-text Edit
  

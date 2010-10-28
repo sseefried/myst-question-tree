@@ -1,11 +1,13 @@
 = RedCloth.new(result.textile).to_html
 - if admin
   - form_for :result, :url => { :action => 'update_result', :id => result.id} do |f|
+    = f.hidden_field :tree_id, :value => result.tree_id
     %br
     %br
-    %span.tiny-text=link_to "Back to tree", :action => 'list_tree'
+    %span.tiny-text=link_to "Back to tree", :action => 'show_tree', :id => result.tree
     %span.tiny-text='|'
     %span.tiny-text=result_edit_link(result, response) 
 - else
   %br
-  =link_to "Start again", :action => 'index'
+  =link_to "Start again", permalink_for(result.tree)
+

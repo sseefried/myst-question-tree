@@ -3,5 +3,6 @@
   - remote_form_for :question, :url => { :action => 'create_question', :id => response.id } do |f|
     = f.text_field   :text, :size => 80
     = f.hidden_field :response_id, :value => response.id
+    = f.hidden_field :tree_id, :value => tree.id
     = submit_tag "Submit"
     %span.tiny-text= link_to_remote "Cancel", :url => { :action => 'cancel_link_to_question', :id => response.id }

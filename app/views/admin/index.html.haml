@@ -1,0 +1,12 @@
+%h2 Choose a question tree to edit
+%ul
+  - @trees.each do |tree|
+    - permalink_url = "#{root_url}tree/#{tree.permalink}"
+    %li
+      = link_to tree.name, :action => 'show_tree', :id => tree.id
+      %span.tiny-text= '|'
+      %span.tiny-text= link_to 'Change name', :action => 'edit_tree', :id => tree.id
+      %br
+      =permalink_url
+
+= link_to "Add new", :action => 'new_tree'

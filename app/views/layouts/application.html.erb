@@ -29,7 +29,10 @@
     </div><!-- content -->
     <div class="content tiny-text" style="border-top: 1px solid #CCC">
         <a href="/">Home</a> | <a href="http://myst.com.au">MYST</a> | <a href="">Contact us</a>
-        | <%= link_to "Admin", :controller => 'admin', :action => 'list_tree' %>
+        | <%= link_to "Admin", :controller => 'admin', :action => 'index' %>
+        <% if @tree && @is_admin -%>
+        | <%= link_to "Edit this question tree", permalink_for(@tree) %>
+        <% end -%>
 
     </div>
   </div><!-- middle -->

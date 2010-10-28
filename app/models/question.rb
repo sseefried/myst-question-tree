@@ -1,4 +1,5 @@
 class Question < ActiveRecord::Base
+  belongs_to :tree
   belongs_to :response # Could be +nil+
   has_many :responses, :dependent => :destroy
   named_scope :roots,  { :conditions => { :response_id => nil}}

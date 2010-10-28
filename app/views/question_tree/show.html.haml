@@ -1,0 +1,5 @@
+- if !@question.nil?
+  = render :partial => 'show_question' 
+- else
+  - @results.each do |r|
+    = render :partial => 'show_result', :locals => {:result => r, :admin => false, :tree => r.tree }

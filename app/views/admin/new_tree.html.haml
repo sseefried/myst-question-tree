@@ -1,0 +1,14 @@
+- form_for :tree, :url => {:action => 'update_tree', :id => @tree.id} do |f|
+  = error_messages_for :tree
+  =f.label :name, "Name"
+  =f.text_field :name, :size => 80
+  %br
+  %br
+  =f.submit (@tree.id ? "Update" : "Create")
+  - if  @tree.id 
+    %br
+    %br
+    %span.small-text
+      Note: Changing the title of the question tree changes the permalink of the question tree for users.
+      You may not want to do this if you have given this link to many users or published it on other
+      websites.
