@@ -5,14 +5,14 @@ body {
 
 .middle {
   background-position: center;
-  background-image: url( "../images/middle_background.png" );
+/*  background-image: url( "../images/middle_background.png" ); /*
 }
 
 .bottom {
   background-position: center;
-    background-image: url( "../images/bottom_background.png" );
+/*    background-image: url( "../images/bottom_background.png" );  */
     height: 13px;
-    margin-bottom: 30px;
+    margin-bottom: 30px;                                          
 }
 
 .content {
@@ -20,14 +20,21 @@ body {
   margin: 0pt;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 0indepx;
+  margin-top: 0px;
+  margin-bottom: 0px;
   padding: 10px 10px 10px 10px;
   overflow: hidden;
   position: relative;
   word-wrap: break-word;
   text-align: left;
-  width:600px;
+  width:900px;
+}
+
+.additional {
+  float: right;
+  margin-right: 20px;
+  width: 400px;
+  font-size: 10pt;
 }
 
 .tiny-text {
