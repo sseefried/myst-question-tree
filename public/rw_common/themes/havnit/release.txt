@@ -1,0 +1,318 @@
+Havnit r6 - 02-24-11 14:02
+release notes:
+
+02-23-11 18:20
+
+* Contents/scripts/seydoggy.js (40)	 changed - ~$('.filesharing-item').seydoggySetHeight();~ to ~$('.filesharing-item').seydoggySetHeight(0);~ 02-23-11 13:51 
+* Contents/scripts/seydoggy.js (43)	 changed - ~$('.filesharing-item').width($('.mainContent').outerWidth(true) / 4 - 20);~ to ~$('.filesharing-item').width($('.mainContent').outerWidth(true) / 3 - 45);~ 02-23-11 13:51 
+* Contents/styles.css (71)	 changed - ~.postContainer .postContent{padding:2.5em;}~ to ~.postContainer .postContent{padding:1em;}~ 02-23-11 14:34
+
+02-18-11 12:30
+
+* Contents/Info.plist (6)	 updated CFBundleShortVersionString to 6 02-18-11 12:29 
+* Contents/Theme.plist (6477)	 updated RWVersion to 6 02-18-11 12:29
+
+02-18-11 10:51
+
+* Contents/index.html (7)	 changed - ~<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+Contents/index.html (18)	 reordered some resources 02-18-11 10:21 
+* Contents/index.html (25)	 removed- ~<script src="%pathto(scripts/extracontent.js)%"></script>~ 02-18-11 10:13 
+* Contents/index.html (26)	 changed con-com to lt IE 9 02-18-11 10:21 
+* Contents/release.txt (1)	 changed globally - ~jsPathto~ to ~RwGet.pathto()~ 02-18-11 10:27 
+* Contents/scripts/extracontent.js (1)	 removed file 02-18-11 10:12 
+* Contents/scripts/seydoggy.js (24)	 changed - ~$($('#toolbar\_horizontal').children(), '.breadcrumbContainer').parent().show();~ to ~$('#toolbar\_horizontal').children().parent().show();~ 02-18-11 09:54 
+* Contents/scripts/seydoggy.js (27)	 added - ~$('.breadcrumbContainer').parent().show();~ 02-18-11 09:55 
+* Contents/scripts/seydoggy.js (57)	 moved ExtraContent to main seydoggy.js file 02-18-11 10:11 
+* Contents/scripts/seydoggy.js (58)	 updated ExtraContent to r1.4.2 02-18-11 10:09 
+* Contents/scripts/slideshow/seydoggy.slideshow.js (1)	 updated slideshow system 02-18-11 10:48
+
+Havnit r5 - 11-30-10 16:18
+release notes:
+
+11-30-10 16:18
+
+* Contents/index.html (12)	 changed &lt;link rel=&quot;stylesheet&quot; href=&quot;%pathto(styles.css)%&quot;&gt; to &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;%pathto(styles.css)%&quot; /&gt; 11-30-10 16:17 
+* Contents/index.html (14)	 &lt;link rel=&quot;alternate&quot; href=&quot;%pathto(css/print.css)%&quot; hreflang=&quot;en&quot; type=&quot;text/css&quot; media=&quot;print&quot; title=&quot;print&quot;&gt; to &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;print&quot; href=&quot;%pathto(css/print.css)%&quot; /&gt; 11-30-10 16:16 
+* Contents/index.html (17)	 changed &lt;link rel=&quot;stylesheet&quot; href=&quot;%pathto(css/colourtag.css)%&quot; title=&quot;Color styles&quot;&gt; to &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;%pathto(css/colourtag.css)%&quot; /&gt; 11-30-10 16:16
+
+Havnit r4 - 09-17-10 14:16
+release notes:
+
+09-17-10 14:10
+
+* Contents/scripts/extracontent.js (16)	 changed - ~$('#extraContainer1 div').seydoggySetHeight();~ to ~var ecTallest = 0; $('#extraContainer1 div').each(function() { if ($(this).outerHeight(true) > ecTallest) ecTallest = $(this).outerHeight(true); });~ 09-17-10 14:07
+* Contents/scripts/extracontent.js (21)	 changed - ~$('.seydoggySlideshow,.pageHeader').height($('#extraContainer1 div').outerHeight(true) + 60);~ to ~$('.seydoggySlideshow,.pageHeader').height(ecTallest + 60);~ 09-17-10 14:08
+
+08-26-10 10:30
+
+* Contents/index.html (13)	 changed ~<link rel="alternate" href="%pathto(css/print.css)%" hreflang="en" type="text/html" media="print" title="print">~ to <link rel="alternate" href="%pathto(css/print.css)%" hreflang="en" type="text/css" media="print" title="print"> 08-26-10 10:29
+
+Havnit r3 - 08-13-10 09:19
+release notes:
+
+08-13-10 09:15
+
+* Contents/styles.css (145)	 changed - ~.blog-archive-link-enabled:after{content:",";}~ to ~.blog-archive-link-enabled:after{content:", ";}~ 08-13-10 09:10 
+* Contents/styles.css (147)	 changed - ~.blog-archive-link-enabled{margin-right:5px;}~ to ~.blog-archive-link-enabled{}~ 08-13-10 09:12 
+* Contents/styles.css (149)	 changed - ~.blog-archive-link-disabled:after{content:",";}~ to ~.blog-archive-link-disabled:after{content:", ";}~ 08-13-10 09:11
+
+07-12-10 16:19
+
+* Contents/scripts/seydoggy.js (46)	 changed - ~$('.mainContent').css('min-height',$('.sidebarContent').outerHeight(true));~ to ~if ($('.sidebarContent').css('display') != 'none') { $('.mainContent').css('min-height',$('.sidebarContent').outerHeight(true)); }~ 07-12-10 16:18
+
+07-08-10 13:23
+
+* Contents/css/headerheight/headerHeightVariable.js (2)	 changed - ~function headerHeightVariable(){return;}~ to ~var headerHeightVariable = true;~ 07-08-10 13:17 
+* Contents/scripts/extracontent.js (15)	 changed - ~if(typeof headerHeightVariable == 'function')~ to ~if(typeof headerHeightVariable != "undefined")~ 07-08-10 13:19
+
+06-28-10 09:36
+
+* Contents/scripts/seydoggy.js (40)	 added - ~$('.filesharing-item').width($('.mainContent').outerWidth(true) / 4 - 20);~ 06-28-10 09:35
+
+06-22-10 14:21
+
+* Theme.plist (470)	 corrected typo in de 06-22-10 14:19 
+* Theme.plist (1231)	 added " / slide show" 06-22-10 14:21
+
+Havnit r2 - 06-07-10 09:24
+release notes:
+
+06-07-10 09:23
+
+* Info.plist (6)	 updated revision level to 2 06-07-10 09:23 
+* Theme.plist (6477)	 updated revision level to 2 06-07-10 09:23
+
+06-01-10 08:35
+
+* index.html (90)	 removed white space from .footerContent 06-01-10 08:34 
+* seydoggy.js (25)	 changed - ~$('.footerContent').children().length~ to ~$('.footerContent').html() != ""~ 06-01-10 08:34
+
+Havnit r1 GM 1 - 05-18-10 10:06
+release notes:
+
+05-18-10 09:35
+
+* Contents/scripts/seydoggy.js (12)	 added - ~$('.preContainer .preContent').width($('.pageHeader').outerWidth(true) - 74);~ 05-18-10 09:34
+
+05-18-10 00:59
+
+* initial public release
+* Contents/index.html (13)	 added ~<link rel="alternate" href="%pathto(css/print.css)%" hreflang="en" type="text/html" media="print" title="print">~ 05-18-10 00:43
+* Contents/scripts/seydoggy.js (30)	 added - ~$('.breadcrumbList').append('/');~ 05-18-10 00:58 
+* Contents/Theme.plist (6418)	 removed '/' from RWBreadCrumb 05-18-10 00:59
+
+Havnit r1 beta 5 - 05-17-10 12:13
+release notes:
+
+05-17-10 11:25
+
+* Contents/styles.css (331)	 added in #toolbar_vertical - ~margin-bottom: 1.2em;~ 05-17-10 11:24
+
+05-17-10 10:49
+
+* Contents/index.html (34)	 added clear to keep container from collapsing 05-17-10 10:48 
+* Contents/styles.css (149)	 removed from .siteHeader- ~min-height:100px;~ 05-17-10 10:48
+
+05-17-10 10:46
+
+* Contents/scripts/seydoggy.js (38)	 added - ~logic to set the top margin for the top toolbar~ 05-17-10 10:33 
+* Contents/scripts/seydoggy.js (41)	 added - ~logic to set the top margin for the .siteHeader .title~ 05-17-10 10:45 
+* Contents/scripts/seydoggy.js (44)	 added - ~logic to set the top margin for .logo img~ 05-17-10 10:45 
+* Contents/styles.css (149)	 changed in .siteHeader - ~height:100px;~ to ~min-height:100px;margin-bottom: 1.2em;~ 05-17-10 10:20 
+* Contents/styles.css (277)	 removed from #toolbar_horizontal- ~margin: 2em 0 0;~ 05-17-10 10:35
+
+05-17-10 10:18
+
+* Contents/index.html (35)	 added clear to accommodate title overflow 05-17-10 10:16 
+* Contents/styles.css (150)	 removed from .siteHeader- ~overflow: auto;~ 05-17-10 10:16
+
+05-17-10 10:09
+
+* Contents/scripts/seydoggy.js (37)	 rewrote the sidebar/main content height logic yet again. Now that I've had proper sleep it seems so obvious now. 05-17-10 09:56
+
+Havnit r1 beta 4 - 05-14-10 11:52
+release notes:
+
+05-14-10 01:56
+
+* Contents/Theme.plist (1665)	 corrected 1/5 to 1/2 in effect speed option 05-14-10 01:55
+
+05-13-10 22:55
+
+* Contents/css/custombg/footer11.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/footer12.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/footer13.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/footer14.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/footer15.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/footer16.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/footer17.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/footer18.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/footer19.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/footer20.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/header11.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/header12.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/header13.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/header14.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/header15.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/header16.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/header17.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/header18.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/header19.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/header20.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/postContent11.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/postContent12.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/postContent13.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/postContent14.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/postContent15.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/postContent16.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/postContent17.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/postContent18.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/postContent19.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/postContent20.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/preContent11.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/preContent12.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/preContent13.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/preContent14.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/preContent15.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/preContent16.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/preContent17.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/preContent18.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/preContent19.css (1)	 corrected header image numbering 05-13-10 22:51 
+* Contents/css/custombg/preContent20.css (1)	 corrected header image numbering 05-13-10 22:51
+
+05-13-10 22:05
+
+* Contents/scripts/seydoggy.js (73)	 removed- ~IE 6 and 7 conditional logic~ 05-13-10 22:03
+
+05-13-10 15:16
+
+* Contents/css/extracontent/show1.css (1)	 removed- ~css/extracontent/show1.css~ 05-13-10 15:08 
+* Contents/css/extracontent/show2.css (1)	 removed- ~css/extracontent/show2.css~ 05-13-10 15:08 
+* Contents/css/extracontent/show3.css (1)	 removed- ~css/extracontent/show3.css~ 05-13-10 15:08 
+* Contents/css/extracontent/show4.css (1)	 removed- ~css/extracontent/show3.css~ 05-13-10 15:08 
+* Contents/Theme.plist (466)	 removed "Show ExtraContent areas" option 05-13-10 15:07
+
+05-13-10 14:41
+
+* Contents/scripts/seydoggy.js (37)	 rewrote the setting of the height nonsense again... last time 05-13-10 14:27
+
+05-13-10 00:31
+
+* Contents/scripts/seydoggy.js (36)	 rewrote column height logic again 05-13-10 00:27
+
+05-12-10 17:26
+
+* Contents/scripts/seydoggy.js (37)	 rewrote time delay logic to use seydoggySetHeight plugin 05-12-10 17:23
+
+05-12-10 17:07
+
+* Contents/scripts/extracontent.js (15)	 changed - ~rewrote to use seydoggySetHeight plugin~ 05-12-10 16:56 
+* Contents/scripts/seydoggy.js (8)	 added - ~seydoggySetHeight plugin~ 05-12-10 16:12 
+* Contents/scripts/seydoggy.js (36)	 added - ~set the height of filesharing to be same~ 05-12-10 16:13 
+* Contents/styles.css (622)	 removed from .filesharing-item- ~height: 120px;~ 05-12-10 16:08 
+* Contents/styles.css (624)	 removed from .filesharing-item-- ~overflow: hidden;~ 05-12-10 16:09 
+* Contents/styles.css (625)	 changed in .filesharing-item-- - ~padding: 10px;~ to ~padding: 10px 10px 0;~ 05-12-10 16:09
+
+05-12-10 15:54
+
+* Contents/scripts/seydoggy.js (33)	 added delay to account for dynamically inserted content 05-12-10 15:52 
+
+05-11-10 13:06
+
+* Contents/css/colourtag.css (66)	 changed all - ~.mainContainer~ to ~.mainContent~ 05-11-10 12:44 
+* Contents/css/colourtag.css (70)	 changed all - ~.mainContainer~ to ~.mainContent~ 05-11-10 12:44 
+* Contents/css/colourtag.css (74)	 changed all - ~.mainContainer~ to ~.mainContent~ 05-11-10 12:44 
+* Contents/css/colourtag.css (78)	 changed all - ~.mainContainer~ to ~.mainContent~ 05-11-10 12:44 
+* Contents/css/colourtag.css (82)	 changed all - ~.mainContainer~ to ~.mainContent~ 05-11-10 12:44 
+* Contents/css/colourtag.css (83)	 added - ~.mainContainer .filesharing-item,~ 05-11-10 12:41 
+* Contents/css/colourtag.css (96)	 added - ~.sidebarContent .filesharing-item,~ 05-11-10 12:41
+
+Havnit r1 beta 3 - 05-11-10 10:33
+release notes:
+
+05-11-10 01:40
+
+* Contents/index.html (20)	 added IE concom for HTML5 support 05-11-10 01:40 
+* Contents/scripts/seydoggy.js (38)	 rewrote IE conditional logic again 05-11-10 01:36
+
+05-10-10 23:35
+
+* Contents/scripts/slideshow/speed2000.js (1)	 added - ~scripts/slideshow/speed2000.js~ 05-10-10 23:31 
+* Contents/scripts/slideshow/speed2500.js (1)	 added - ~scripts/slideshow/speed2500.js~ 05-10-10 23:31 
+* Contents/Theme.plist (1908)	 added 2 second effect option 05-10-10 23:34 
+* Contents/Theme.plist (1934)	 added 2 1/2 second effect option 05-10-10 23:34
+
+05-10-10 23:05
+
+* Contents/scripts/slideshow/seydoggy.slideshow.js (45)	 changed - ~background-image~ to ~background~ 05-10-10 23:04 
+* Contents/scripts/slideshow/seydoggy.slideshow.js (47)	 changed - ~background-image~ to ~background~ 05-10-10 23:04 
+* Contents/scripts/slideshow/seydoggy.slideshow.js (74)	 changed - ~background-image~ to ~background~ 05-10-10 23:04
+
+05-10-10 22:34
+
+* Contents/index.html (67)	 added .clear 05-10-10 21:49 
+* Contents/scripts/extracontent.js (21)	 added in $('.pageHeader').height( tallest + 60); - ~.seydoggySlideshow;~ 05-10-10 18:39 
+* Contents/scripts/extracontent.js (23)	 removed- ~$('.seydoggySlideshow').height( tallest + 60);~ 05-10-10 18:38 
+* Contents/scripts/seydoggy.js (32)	 added - ~logic to measure and equalise .mainContent/.sidebarContent~ 05-10-10 18:45 
+* Contents/scripts/seydoggy.js (39)	 changed in IE conditional logic - ~rewrote entire IE logic to utilize jQuery.support feature detection~ 05-10-10 22:33 
+* Contents/styles.css (209)	 removed from .contentContainer- ~overflow: hidden;~ 05-10-10 22:04 
+* Contents/styles.css (213)	 removed from .mainContent- ~margin-bottom:-9999em;padding-bottom:10000em;~ 05-10-10 21:57 
+* Contents/styles.css (219)	 removed from .sidebarContent- ~margin-bottom:-9999em;padding-bottom:10000em;~ 05-10-10 21:58
+
+05-10-10 17:56
+
+* Contents/scripts/corners/curvycorners.src.js (1)	 removed- ~scripts/corners/curvycorners.src.js~ 05-10-10 15:34 
+* Contents/scripts/seydoggy.js (22)	 changed - ~$('#toolbar_horizontal ul, .breadcrumbContainer').parent().show();~ to ~$($('#toolbar_horizontal').children(), '.breadcrumbContainer').parent().show();~ 05-10-10 15:25 
+* Contents/scripts/seydoggy.js (169)	 removed- ~include(jsPathto + 'scripts/corners/curvycorners.src.js');~ 05-10-10 15:32
+
+05-10-10 10:09
+
+* Contents/scripts/slideshow/seydoggy.slideshow.js (45)	 added - ~ center center repeat~ 05-10-10 09:45 
+* Contents/scripts/slideshow/seydoggy.slideshow.js (47)	 added - ~ center center repeat~ 05-10-10 09:45 
+* Contents/scripts/slideshow/seydoggy.slideshow.js (74)	 added - ~ center center repeat~ 05-10-10 09:45
+
+05-07-10 08:42
+
+* Contents/scripts/seydoggy.js (14)	 changed - ~.currentAncestorListItem .toolbarList~ to ~.currentAncestorListItem > .toolbarList~ to narrow selection and limit display of toolbar_sub 05-07-10 08:41
+
+Havnit r1 beta 2 - 05-06-10 16:40
+release notes:
+
+* Contents/scripts/seydoggy.js (22)	 added show/hide logic - ~#toolbar_horizontal ul~ 05-06-10 15:33 
+* Contents/styles.css (284)	 added to #toolbar_horizontal - ~display: none;~ 05-06-10 15:29
+
+05-06-10 12:23
+
+* Contents/Theme.plist (2176)	 "Custom pre content 10" to "Background image 10" 05-06-10 11:07 
+* Contents/Theme.plist (2770)	 "Custom post content 10" to "Background image 10" 05-06-10 11:09 
+* Contents/Theme.plist (5260)	 "Colors (top nav)" to "Colors (sub nav)" 05-06-10 12:03
+
+05-05-10 17:00
+
+* Contents/css/colourtag.css (42)	 changed .mainContainer .preContent - ~background-color: %colour_preContent_bg%;~ to ~background-color: %colour_custom_preContent_bg%;~ 05-05-10 15:14 
+* Contents/css/colourtag.css (111)	 changed .mainContainer .postContent - ~background-color: %colour_postContent_bg%;~ to ~background-color: %colour_custom_postContent_bg%;~ 05-05-10 15:14 
+* Contents/Theme.plist (206)	 changed path from 1100.css to 1160.css 05-05-10 14:41 
+* Contents/Theme.plist (5277)	 removed Background (pre content) 05-05-10 15:16 
+* Contents/Theme.plist (6002)	 removed Background (post content) 05-05-10 15:15
+
+Havnit r1 beta 1 - 05-05-10 11:45
+release notes:
+
+05-05-10 11:45
+
+* initial beta release
+
+
+Havnit r0 - 04-23-10 11:39
+release notes:
+
+04-23-10 11:39
+
+* RapidWeaver production started
+
+seyDoggy Havnit r0 - 04-20-10 8:00
+release notes:
+
+04-20-10 8:00
+
+* pre production started

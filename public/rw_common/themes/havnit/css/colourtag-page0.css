@@ -1,0 +1,82 @@
+/* @group common */
+html{background-color:#D0E5B7;}
+/* @end */
+/* @group header */
+.pageHeader{background-color:#E8E8E8;}
+.preContainer{background-color:#FFFFFF;color:#5B5B5B;}
+.site_title{color:#4C4C4C;/*site title*/}
+.site_slogan{color:#76848B;/*site slogan*/}
+.preContainer.contentBox,.preContainer pre,.preContainer code,.preContainer .blog-entry-date,.preContainer .filesharing-item,.preContainer .thumbnail-frame a,.preContainer .movie-thumbnail-frame a,.preContainer .movie-frame object,.preContainer .form-input-field,.preContainer input.fl-text,.preContainer textarea.fl-textarea{border-color:#D4D4D4;}
+.preContainer h1,.preContainer h2,.preContainer h3,.preContainer h4,.preContainer h5,.preContainer h6{color:#EBA022;}
+.preContainer a:link,.preContainer a:visited,.breadcrumb li a:link,.breadcrumb li a:visited{color:#3FB2FF;}
+.preContainer a:hover,.preContainer a:active,.breadcrumb li a:hover,.breadcrumb li a:active{color:#EBA022;}
+.preContainer pre,.preContainer code,.preContainer .form-input-field,.preContainer .filesharing-item,.preContainer input.fl-text,.preContainer textarea.fl-textarea{background:#FFFFFF;color:#313131;}
+/* @end */
+/* @group pre content (extra content 2) */
+.mainContainer .preContent{color:#5B5B5B;background-color:#E8E8E8;}
+.mainContainer .preContent,.mainContainer .preContent pre,.mainContainer .preContent code,.mainContainer .preContent .blog-entry-date,.mainContainer .preContent .filesharing-item,.mainContainer .preContent .thumbnail-frame a,.mainContainer .preContent .movie-thumbnail-frame a,.mainContainer .preContent .movie-frame object,.mainContainer .preContent .form-input-field,.mainContainer .preContent input.fl-text,.mainContainer .preContent textarea.fl-textarea{border-color:#D4D4D4;}
+.mainContainer .preContent h1,.mainContainer .preContent h2,.mainContainer .preContent h3,.mainContainer .preContent h4,.mainContainer .preContent h5,.mainContainer .preContent h6{color:#EBA022;}
+.mainContainer .preContent a:link,.mainContainer .preContent a:visited{color:#3FB2FF;}
+.mainContainer .preContent a:hover,.mainContainer .preContent a:active{color:#EBA022;}
+.mainContainer .preContent pre,.mainContainer .preContent code,.mainContainer .preContent .form-input-field,.mainContainer .preContent .filesharing-item,.mainContainer .preContent input.fl-text,.mainContainer .preContent textarea.fl-textarea{background:#FFFFFF;color:#313131;}
+/* @end */
+/* @group main content */
+.mainContainer{background-color:#FFFFFF;color:#5B5B5B;}
+.mainContainer,.mainContent,.mainContent pre,.mainContent code,.mainContent .blog-entry-date,.mainContent .filesharing-item,.mainContent .thumbnail-frame a,.mainContent .movie-thumbnail-frame a,.mainContent .movie-frame object,.mainContent .form-input-field,.mainContent input.fl-text,.mainContent textarea.fl-textarea{border-color:#D4D4D4;}
+.mainContent h1,.mainContent h2,.mainContent h3,.mainContent h4,.mainContent h5,.mainContent h6,.exif-data{color:#EBA022;}
+.mainContent a:link,.mainContent a:visited,.photo-title,.photo-links a:link,.photo-links a:visited{color:#3FB2FF;}
+.mainContent a:hover,.mainContent a:active,.photo-caption,.photo-links,.photo-links a:hover,.photo-links a:active{color:#EBA022;}
+.mainContent pre,.mainContent code,.mainContent .filesharing-item,.mainContent .form-input-field,.mainContent input.fl-text,.mainContainer textarea.fl-textarea{background:#FFFFFF;color:#313131;}
+/* @end */
+/* @group sidebar */
+.sidebarContent{color:#5B5B5B;}
+.sidebar_title{color:#333333;}
+.sidebarContent .sidebarFAQ,.sidebarContent .filesharing-item,.sidebarContent .form-input-field,.sidebarContent input.fl-text,.sidebarContent textarea.fl-textarea,#blog-rss-feeds,ul.blog-tag-cloud,#blog-archives,#blog-search-sidebar,#blog-categories{border-color:#D4D4D4;}
+.sidebarContent h1,.sidebarContent h2,.sidebarContent h3,.sidebarContent h4,.sidebarContent h5,.sidebarContent h6{color:#EBA022;}
+.sidebarContent a:link,.sidebarContent a:visited{color:#3FB2FF;}
+.sidebarContent a:hover,.sidebarContent a:active{color:#EBA022;}
+.sidebarContent pre,.sidebarContent code,.sidebarContent .form-input-field,.sidebarContent .filesharing-item,.sidebarContent input.fl-text,.sidebarContent textarea.fl-textarea{background:#FFFFFF;color:#313131;}
+/* @end */
+/* @group pre content (extra content 3) */
+.mainContainer .postContent{color:#5B5B5B;background-color:#E8E8E8;}
+.mainContainer .postContent,.mainContainer .postContent pre,.mainContainer .postContent code,.mainContainer .postContent .blog-entry-date,.mainContainer .postContent .filesharing-item,.mainContainer .postContent .thumbnail-frame a,.mainContainer .postContent .movie-thumbnail-frame a,.mainContainer .postContent .movie-frame object,.mainContainer .postContent .form-input-field,.mainContainer .postContent input.fl-text,.mainContainer .postContent textarea.fl-textarea{border-color:#D4D4D4;}
+.mainContainer .postContent h1,.mainContainer .postContent h2,.mainContainer .postContent h3,.mainContainer .postContent h4,.mainContainer .postContent h5,.mainContainer .postContent h6{color:#EBA022;}
+.mainContainer .postContent a:link,.mainContainer .postContent a:visited{color:#3FB2FF;}
+.mainContainer .postContent a:hover,.mainContainer .postContent a:active{color:#EBA022;}
+.mainContainer .postContent pre,.mainContainer .postContent code,.mainContainer .postContent .form-input-field,.mainContainer .postContent .filesharing-item,.mainContainer .postContent input.fl-text,.mainContainer .postContent textarea.fl-textarea{background:#FFFFFF;color:#313131;}
+/* @end */
+/* @group post content (extra content 4) */
+.postContainer{color:#5B5B5B;background-color:#FFFFFF;}
+.postContainer .postContent{background-color:#E8E8E8;}
+.postContainer,.postContainer pre,.postContainer code,.postContainer .blog-entry-date,.postContainer .filesharing-item,.postContainer .thumbnail-frame a,.postContainer .movie-thumbnail-frame a,.postContainer .movie-frame object,.postContainer .form-input-field,.postContainer input.fl-text,.postContainer textarea.fl-textarea{border-color:#D4D4D4;}
+.postContainer h1,.postContainer h2,.postContainer h3,.postContainer h4,.postContainer h5,.postContainer h6{color:#EBA022;}
+.postContainer a:link,.postContainer a:visited{color:#3FB2FF;}
+.postContainer a:hover,.postContainer a:active{color:#EBA022;}
+.postContainer pre,.postContainer code,.postContainer .form-input-field,.postContainer .filesharing-item,.postContainer input.fl-text,.postContainer textarea.fl-textarea{background:#FFFFFF;color:#313131;}
+/* @end */
+/* @group content .footerContainer */
+.footerContainer{background-color:#FFFFFF;border-color:#D4D4D4;color:#5B5B5B;}
+.footerContainer a:link,.footerContainer a:visited{color:#3FB2FF;}
+.footerContainer a:hover,.footerContainer a:active{color:#EBA022;}
+/* @end */
+/* @group toolbar horizontal */
+#toolbar_horizontal{background-color:#999999;border-color:#666666;}
+#toolbar_horizontal li.currentListItem a:link,#toolbar_horizontal li.currentListItem a:visited{color:#FFFFFF;}
+#toolbar_horizontal li.currentAncestorListItem a:link,#toolbar_horizontal li.currentAncestorListItem a:visited{color:#DEDEDE;}
+#toolbar_horizontal li.normalListItem a:link,#toolbar_horizontal li.normalListItem a:visited{color:#CCCCCC;}
+#toolbar_horizontal li.currentListItem a:hover,#toolbar_horizontal li.currentListItem a:active,#toolbar_horizontal li.currentAncestorListItem a:hover,#toolbar_horizontal li.currentAncestorListItem a:active,#toolbar_horizontal li.normalListItem a:hover,#toolbar_horizontal li.normalListItem a:active{color:#DEDEDE;}
+/* @end */
+/* @group toolbar sub */
+#toolbar_sub{background-color:#F2F2F2;border-color:#D4D4D4;}
+#toolbar_sub li.currentListItem a:link,#toolbar_sub li.currentListItem a:visited{color:#333333;}
+#toolbar_sub li.currentAncestorListItem a:link,#toolbar_sub li.currentAncestorListItem a:visited{color:#666666;}
+#toolbar_sub li.normalListItem a:link,#toolbar_sub li.normalListItem a:visited{color:#9F9F9F;}
+#toolbar_sub li.currentListItem a:hover,#toolbar_sub li.currentListItem a:active,#toolbar_sub li.currentAncestorListItem a:hover,#toolbar_sub li.currentAncestorListItem a:active,#toolbar_sub li.normalListItem a:hover,#toolbar_sub li.normalListItem a:active{color:#666666;}
+#toolbar_sub ul li:hover{background-color:#E2E2E2;}
+#toolbar_sub ul li a{border-color:#D4D4D4;}
+/* @end */
+/* @group side nav */
+#toolbar_vertical ul a{border-color:#000000;}
+#toolbar_vertical ul li a.current:hover,#toolbar_vertical ul li a.current:active,#toolbar_vertical ul li a:link,#toolbar_vertical ul li a:visited{color:#878787;background-color:#3E3E3E;}
+#toolbar_vertical ul li a.current:link,#toolbar_vertical ul li a.current:visited,#toolbar_vertical ul li a:hover,#toolbar_vertical ul li a:active{color:#C1C3C8;background-color:#555555;}
+/* @end */
