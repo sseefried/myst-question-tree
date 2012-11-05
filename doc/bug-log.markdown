@@ -27,7 +27,9 @@ the entire question tree.
 
 ## Further actions
 
-We should also add a rake task to check and fix the question tree.
+[X] Add a rake task to check and fix the question tree.
+It can be invoked with:
+% rake myst:remove_illegitimate_response_children
 
 We should also start doing daily backups of the database as losing data like this is
 unacceptable.
