@@ -1,5 +1,5 @@
 source "http://rubygems.org"
-gem "rails", "2.3.15"
+gem "rails", "2.3.16"
 gem "haml", "~> 3.0.25"
 gem "heroku", "~> 2.31.2"
 gem "heroku-api", "~> 0.3.4"
